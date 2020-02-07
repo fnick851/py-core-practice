@@ -20,7 +20,7 @@ class SearchEngineBase(object):
 
 
 def main(search_engine):
-    for file_path in ['searched/1.txt', 'searched/2.txt', 'searched/3.txt', 'searched/4.txt', 'searched/5.txt']:
+    for file_path in ['1.txt', '2.txt', '3.txt', '4.txt', '5.txt']:
         search_engine.add_corpus(file_path)
 
     while True:
