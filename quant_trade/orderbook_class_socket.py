@@ -72,17 +72,17 @@ class Crawler:
         self.ws.run_forever(sslopt={'cert_reqs': ssl.CERT_NONE})
 
     def on_message(self, message):
-        # 对收到的信息进行处理，然后送给 orderbook
+        # process received data, then pass to orderbook
         data = json.loads(message)
         for event in data['events']:
             price, amount, direction = float(event['price']), float(
                 event['remaining']), event['side']
             self.orderbook.insert(price, amount, direction)
 
-        # 整理 orderbook，排序，只选取我们需要的前几个
+        # keep only the information we need
         self.orderbook.sort_and_truncate()
 
-        # 输出到文件
+        # write to a file
         with open(self.output_file, 'a+') as f:
             bids, asks = self.orderbook.get_copy_of_bids_and_asks()
             output = {

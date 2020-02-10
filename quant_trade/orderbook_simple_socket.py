@@ -4,7 +4,6 @@ import ssl
 import websocket
 import json
 
-# 全局计数器
 count = 5
 
 
@@ -12,7 +11,7 @@ def on_message(ws, message):
     global count
     print(message)
     count -= 1
-    # 接收了5次消息之后关闭websocket连接
+    # close socket
     if count == 0:
         ws.close()
 

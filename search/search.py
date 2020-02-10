@@ -49,7 +49,7 @@ class BOWInvertedIndexEngine(SearchEngineBase):
         for query_word in query_words:
             query_words_index.append(0)
 
-        # 如果某一个查询单词的倒序索引为空，我们就立刻返回
+        # if reversed index is empty, return immediately
         for query_word in query_words:
             if query_word not in self.inverted_index:
                 return []
@@ -57,41 +57,41 @@ class BOWInvertedIndexEngine(SearchEngineBase):
         result = []
         while True:
 
-            # 首先，获得当前状态下所有倒序索引的 index
+            # get all current reversed indices
             current_ids = []
 
             for idx, query_word in enumerate(query_words):
                 current_index = query_words_index[idx]
                 current_inverted_list = self.inverted_index[query_word]
 
-                # 已经遍历到了某一个倒序索引的末尾，结束 search
+                # reach the end of the indices
                 if current_index >= len(current_inverted_list):
                     return result
 
                 current_ids.append(current_inverted_list[current_index])
 
-            # 然后，如果 current_ids 的所有元素都一样，那么表明这个单词在这个元素对应的文档中都出现了
+            # this word appears in the corresponding document
             if all(x == current_ids[0] for x in current_ids):
                 result.append(current_ids[0])
                 query_words_index = [x + 1 for x in query_words_index]
                 continue
 
-            # 如果不是，我们就把最小的元素加一
+            # if not, increment by one
             min_val = min(current_ids)
             min_val_pos = current_ids.index(min_val)
             query_words_index[min_val_pos] += 1
 
     @staticmethod
     def parse_text_to_words(text):
-        # 使用正则表达式去除标点符号和换行符
+        # remove punctuation and newline
         text = re.sub(r'[^\w ]', ' ', text)
-        # 转为小写
+        # lowercase
         text = text.lower()
-        # 生成所有单词的列表
+        # generate list of all words
         word_list = text.split(' ')
-        # 去除空白单词
+        # remove empty words
         word_list = filter(None, word_list)
-        # 返回单词的 set
+        # convert to set
         return set(word_list)
 
 

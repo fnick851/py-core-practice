@@ -2,10 +2,12 @@
 d = {'b': 1, 'a': 2, 'c': 10}
 d.items()
 # %%
-d_sorted_by_key = sorted(d.items(), key=lambda x: x[0])  # 根据字典键的升序排序
+# ascending sort based on keys
+d_sorted_by_key = sorted(d.items(), key=lambda x: x[0])
 d_sorted_by_key
 # %%
-d_sorted_by_value = sorted(d.items(), key=lambda x: x[1])  # 根据字典值的升序排序
+# ascending sort based on values
+d_sorted_by_value = sorted(d.items(), key=lambda x: x[1])
 d_sorted_by_value
 # %%
 
