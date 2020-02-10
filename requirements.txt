@@ -1,11 +1,16 @@
+aiohttp==3.6.2
 appnope==0.1.0
+async-timeout==3.0.1
 attrs==19.3.0
 autopep8==1.5
 backcall==0.1.0
+beautifulsoup4==4.8.2
 bleach==3.1.0
+chardet==3.0.4
 decorator==4.4.1
 defusedxml==0.6.0
 entrypoints==0.3
+idna==2.8
 ipykernel==5.1.4
 ipython==7.11.1
 ipython-genutils==0.2.0
@@ -17,8 +22,10 @@ jupyter==1.0.0
 jupyter-client==5.3.4
 jupyter-console==6.1.0
 jupyter-core==4.6.1
+lxml==4.5.0
 MarkupSafe==1.1.1
 mistune==0.8.4
+multidict==4.7.4
 nbconvert==5.6.1
 nbformat==5.0.4
 notebook==6.0.3
@@ -38,6 +45,7 @@ pyzmq==18.1.1
 qtconsole==4.6.0
 Send2Trash==1.5.0
 six==1.14.0
+soupsieve==1.9.5
 terminado==0.8.3
 testpath==0.4.4
 tornado==6.0.3
@@ -45,3 +53,4 @@ traitlets==4.3.3
 wcwidth==0.1.8
 webencodings==0.5.1
 widgetsnbextension==3.5.1
+yarl==1.4.2
