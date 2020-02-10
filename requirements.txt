@@ -6,6 +6,7 @@ autopep8==1.5
 backcall==0.1.0
 beautifulsoup4==4.8.2
 bleach==3.1.0
+certifi==2019.11.28
 chardet==3.0.4
 decorator==4.4.1
 defusedxml==0.6.0
@@ -43,6 +44,7 @@ pyrsistent==0.15.7
 python-dateutil==2.8.1
 pyzmq==18.1.1
 qtconsole==4.6.0
+requests==2.22.0
 Send2Trash==1.5.0
 six==1.14.0
 soupsieve==1.9.5
@@ -50,7 +52,9 @@ terminado==0.8.3
 testpath==0.4.4
 tornado==6.0.3
 traitlets==4.3.3
+urllib3==1.25.8
 wcwidth==0.1.8
 webencodings==0.5.1
+websocket-client==0.57.0
 widgetsnbextension==3.5.1
 yarl==1.4.2
